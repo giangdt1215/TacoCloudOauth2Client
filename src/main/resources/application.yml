@@ -1,0 +1,18 @@
+server:
+  port: 9000
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          taco-giangdt:
+            provider: tacocloud
+            client-id: taco-giangdt
+            client-secret: secret
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:9000/login/oauth2/code/taco-giangdt"
+            scope: writeIngredients,deleteIngredients,openid
+        provider:
+          tacocloud:
+            issuer-uri: http://localhost:9090
